@@ -1,6 +1,6 @@
 # SphereLayout
 
-a layout which supports 3D rotate and enable its childview has z-depth for android
+a layout which supports 3d rotate and enable its childview has z-depth for android
 
 the effect is shown as below
 
