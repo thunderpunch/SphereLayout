@@ -17,6 +17,7 @@ the effect is shown as below
 3. childview默认处于SphereLayout在x,y轴构建的平面上的中间位置，可添加margin使它相对中间位置进行偏移.
 
 ```xml
+<!-- sample -->
 <com.thunderpunch.spherelayoutlib.layout.SphereLayout
         android:id="@+id/sl"
         android:layout_width="match_parent"
@@ -52,19 +53,19 @@ the effect is shown as below
             app:layout_depth="40dp">
 
         </LinearLayout>
-    </com.thunderpunch.spherelayoutlib.layout.SphereLayout>
+</com.thunderpunch.spherelayoutlib.layout.SphereLayout>
 ```
 
-1. 使SphereLayout朝某个方向旋转一定的角度
+4. 使SphereLayout朝某个方向旋转一定的角度
 
 ```java
 SphereLayout sl = (SphereLayout) findViewById(R.id.sl);
 sl.rotate(-40, 30);//朝x轴正方向逆时针旋转40度的方向，向内翻转30度
 ```
 
-1. 反转 SphereLayout
+5. 反转 SphereLayout
 
-```
+```java
 sl.reverse(true);
 ```
 
