@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SphereLayout_Layout">
+        <!--子视图在Z轴上的位置，必需设置-->
+        <attr name="layout_depth" format="dimension|reference" />
+
+        <!--为true时，子视图会宽高适配当前所处depth的圆直径且无视自身margin属性-->
+        <attr name="layout_fitBounds" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="SphereLayout">
+        <attr name="snapOrientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+            <enum name="none" value="9" />
+        </attr>
+        <attr name="radius" format="dimension|reference" />
+        <attr name="hideBack" format="boolean" />
+    </declare-styleable>
+</resources>
