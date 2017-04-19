@@ -10,15 +10,17 @@ the effect is shown as below
 
 ## Usage
 
+###XML
+
 1. 在布局中配置SphereLayout, 设置半径"radius"和对齐方向"snapOrientation" ;
 
 2. 添加childview, SphereLayout可以包含任意个childview ,每个childview都需要设置"***layout_depth***"属性,取值范围在 SphereLayout的"radius"正负范围内[ -radius , radius ] , 布局未旋转时,depth越大的childview视觉上越接近用户, depth 为负的childview一开始处于背面.
 
-3. childview默认处于SphereLayout在x,y轴构建的平面上的中间位置，可添加margin使它相对中间位置进行偏移.
+3. childview默认位于SphereLayout在x,y轴构建的平面上的中间位置，可添加margin使它相对中间位置进行偏移.
 
 ```xml
 <!-- sample -->
-<com.thunderpunch.spherelayoutlib.layout.SphereLayout
+    <com.thunderpunch.spherelayoutlib.layout.SphereLayout
         android:id="@+id/sl"
         android:layout_width="match_parent"
         android:layout_height="400dp"
@@ -53,8 +55,10 @@ the effect is shown as below
             app:layout_depth="40dp">
 
         </LinearLayout>
-</com.thunderpunch.spherelayoutlib.layout.SphereLayout>
+    </com.thunderpunch.spherelayoutlib.layout.SphereLayout>
 ```
+
+###Code
 
 4. 使SphereLayout朝某个方向旋转一定的角度
 
