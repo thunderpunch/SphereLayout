@@ -3,17 +3,20 @@
     <declare-styleable name="SphereLayout_Layout">
         <!--子视图在Z轴上的位置，必需设置-->
         <attr name="layout_depth" format="dimension|reference" />
-
         <!--为true时，子视图会宽高适配当前所处depth的圆直径且无视自身margin属性-->
         <attr name="layout_fitBounds" format="boolean" />
     </declare-styleable>
+
     <declare-styleable name="SphereLayout">
+        <!-- 标记位于背面的视图是以Y轴水平翻转可到达正面，或是以X轴竖直翻转可到达正面 -->
         <attr name="snapOrientation">
             <enum name="horizontal" value="0" />
             <enum name="vertical" value="1" />
             <enum name="none" value="9" />
         </attr>
+        <!-- 球体半径-->
         <attr name="radius" format="dimension|reference" />
+        <!--是否隐藏位于背面的视图 -->
         <attr name="hideBack" format="boolean" />
     </declare-styleable>
 </resources>

@@ -69,7 +69,7 @@ public class SphereLayout extends ViewGroup {
         super(context, attrs, defStyleAttr);
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SphereLayout);
         mRadius = a.getDimensionPixelSize(R.styleable.SphereLayout_radius, 0);//球体半径
-        mOrientation = a.getInt(R.styleable.SphereLayout_snapOrientation, HORIZONTAL);//depth为负的子视图是否进行横向或纵向的翻转
+        mOrientation = a.getInt(R.styleable.SphereLayout_snapOrientation, HORIZONTAL);//标记位于背面的视图是以Y轴水平翻转到达正面 或是以X轴竖直翻转可到达正面
         mHideBack = a.getBoolean(R.styleable.SphereLayout_hideBack, false);//是否隐藏处在背面的布局
         a.recycle();
         mCenter = new Point();

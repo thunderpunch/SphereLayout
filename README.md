@@ -10,55 +10,55 @@ the effect is shown as below
 
 ## Usage
 
-###XML
+**XML**
 
-1. 在布局中配置SphereLayout, 设置半径"radius"和对齐方向"snapOrientation" ;
+1. 在布局中配置SphereLayout, 设置半径"radius"和对齐方向"snapOrientation" (属性说明见XML attributes);
 
 2. 添加childview, SphereLayout可以包含任意个childview ,每个childview都需要设置"***layout_depth***"属性,取值范围在 SphereLayout的"radius"正负范围内[ -radius , radius ] , 布局未旋转时,depth越大的childview视觉上越接近用户, depth 为负的childview一开始处于背面.
 
 3. childview默认位于SphereLayout在x,y轴构建的平面上的中间位置，可添加margin使它相对中间位置进行偏移.
 
 ```xml
-<!-- sample -->
-    <com.thunderpunch.spherelayoutlib.layout.SphereLayout
-        android:id="@+id/sl"
+    <!-- sample -->
+<com.thunderpunch.spherelayoutlib.layout.SphereLayout
+    android:id="@+id/sl"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    app:radius="90dp"
+    app:snapOrientation="horizontal">
+
+    <View
+        android:id="@+id/v0"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        app:radius="90dp"
-        app:snapOrientation="horizontal">
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_oval_grey"
+        app:layout_depth="30dp"
+        app:layout_fitBounds="true" />
 
-        <View
-            android:id="@+id/v0"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/shape_oval_grey"
-            app:layout_depth="30dp"
-            app:layout_fitBounds="true" />
+    <View
+        android:id="@+id/v1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_oval_black"
+        app:layout_depth="-70dp" />
 
-        <View
-            android:id="@+id/v1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/shape_oval_black"
-            app:layout_depth="-70dp" />
+    <LinearLayout
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="5dp"
+        app:layout_depth="40dp">
 
-        <LinearLayout
-            android:layout_width="90dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="55dp"
-            android:layout_marginTop="40dp"
-            android:orientation="vertical"
-            android:paddingBottom="5dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="5dp"
-            app:layout_depth="40dp">
-
-        </LinearLayout>
-    </com.thunderpunch.spherelayoutlib.layout.SphereLayout>
+    </LinearLayout>
+</com.thunderpunch.spherelayoutlib.layout.SphereLayout>
 ```
 
-###Code
+**Code**
 
 4. 使SphereLayout朝某个方向旋转一定的角度
 
@@ -81,14 +81,17 @@ sl.reverse(true);
 
 ```xml
 <declare-styleable name="SphereLayout">
+    <!-- 标记位于背面的视图是以Y轴水平翻转可到达正面，或是以X轴竖直翻转可到达正面 -->
     <attr name="snapOrientation">
         <enum name="horizontal" value="0" />
         <enum name="vertical" value="1" />
         <enum name="none" value="9" />
     </attr>
+    <!-- 球体半径-->
     <attr name="radius" format="dimension|reference" />
+    <!--是否隐藏位于背面的视图 -->
     <attr name="hideBack" format="boolean" />
-</declare-styleable>
+</declare-styleable>    
 ```
 
 - SphereLayout 直系子视图的布局参数			
